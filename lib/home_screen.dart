@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'create_movie_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +19,7 @@ class HomeScreen extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Movie Tycoon',
                 style: TextStyle(
                   fontSize: 40,
@@ -25,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -33,14 +35,14 @@ class HomeScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => CreateMovieScreen()),
                   );
                 },
-                child: Text('Nouveau jeu'),
+                child: const Text('Nouveau jeu'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   // Logique pour "Continuer" (si une sauvegarde existe)
                 },
-                child: Text('Continuer'),
+                child: const Text('Continuer'),
               ),
             ],
           ),

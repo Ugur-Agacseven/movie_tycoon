@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class CreateMovieScreen extends StatefulWidget {
+  const CreateMovieScreen({super.key});
+
   @override
   _CreateMovieScreenState createState() => _CreateMovieScreenState();
 }
@@ -17,7 +19,7 @@ class _CreateMovieScreenState extends State<CreateMovieScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Créer un Film'),
+        title: const Text('Créer un Film'),
       ),
       body: Stack(
         fit: StackFit.expand,
@@ -34,11 +36,11 @@ class _CreateMovieScreenState extends State<CreateMovieScreen> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.movie, color: Colors.white),
-                    SizedBox(width: 10),
+                    const Icon(Icons.movie, color: Colors.white),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: TextField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: "Titre du film",
                           labelStyle: TextStyle(color: Colors.white),
                         ),
@@ -51,15 +53,15 @@ class _CreateMovieScreenState extends State<CreateMovieScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 Row(
                   children: [
-                    Icon(Icons.category, color: Colors.white),
-                    SizedBox(width: 10),
+                    const Icon(Icons.category, color: Colors.white),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: TextField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: "Genre du film",
                           labelStyle: TextStyle(color: Colors.white),
                         ),
@@ -72,12 +74,12 @@ class _CreateMovieScreenState extends State<CreateMovieScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
 
                 Row(
                   children: [
-                    Icon(Icons.monetization_on, color: Colors.white),
-                    SizedBox(width: 10),
+                    const Icon(Icons.monetization_on, color: Colors.white),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Slider(
                         value: budget.toDouble(),
@@ -96,13 +98,13 @@ class _CreateMovieScreenState extends State<CreateMovieScreen> {
                 ),
                 Text(
                   'Budget: \$${budget.toString()}',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
 
                 Row(
                   children: [
-                    Icon(Icons.campaign, color: Colors.white),
-                    SizedBox(width: 10),
+                    const Icon(Icons.campaign, color: Colors.white),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Slider(
                         value: marketing.toDouble(),
@@ -121,13 +123,13 @@ class _CreateMovieScreenState extends State<CreateMovieScreen> {
                 ),
                 Text(
                   'Marketing: \$${marketing.toString()}',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
 
                 Row(
                   children: [
-                    Icon(Icons.star, color: Colors.white),
-                    SizedBox(width: 10),
+                    const Icon(Icons.star, color: Colors.white),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Slider(
                         value: actorReputation.toDouble(),
@@ -146,16 +148,16 @@ class _CreateMovieScreenState extends State<CreateMovieScreen> {
                 ),
                 Text(
                   'Réputation des acteurs: $actorReputation',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
                       // Logique de lancement de la production
                     },
-                    child: Text('Lancer la production'),
+                    child: const Text('Lancer la production'),
                   ),
                 ),
               ],

@@ -5,6 +5,8 @@ import 'progression_manager.dart';
 import 'film_evaluation.dart';
 
 class GameScreen extends StatefulWidget {
+  const GameScreen({super.key});
+
   @override
   _GameScreenState createState() => _GameScreenState();
 }
@@ -50,28 +52,28 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Movie Tycoon'),
+        title: const Text('Movie Tycoon'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Créer un film", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 10),
+            const Text("Créer un film", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 10),
             TextField(
-              decoration: InputDecoration(labelText: "Titre du film"),
+              decoration: const InputDecoration(labelText: "Titre du film"),
               onChanged: (value) => setState(() {
                 title = value;
               }),
             ),
             TextField(
-              decoration: InputDecoration(labelText: "Genre du film"),
+              decoration: const InputDecoration(labelText: "Genre du film"),
               onChanged: (value) => setState(() {
                 genre = value;
               }),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text("Budget: \$${budget.toString()}"),
             Slider(
               value: budget.toDouble(),
@@ -105,7 +107,7 @@ class _GameScreenState extends State<GameScreen> {
                 actorReputation = value.toInt();
               }),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: _nextStage,
               child: Text(productionStage == 0 ? "Lancer la préproduction" : productionStage == 1 ? "Lancer la production" : "Lancer la postproduction"),
@@ -114,13 +116,13 @@ class _GameScreenState extends State<GameScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Votre film est terminé !", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const Text("Votre film est terminé !", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   Text("Qualité finale: ${filmEvaluation!.finalQuality}"),
                   Text("Revenus au box-office: \$${filmEvaluation!.boxOffice}"),
                   Text("Événement: $eventMessage"),
                 ],
               ),
-            Spacer(),
+            const Spacer(),
             Text("Niveau actuel: ${ProgressionManager.level}"),
             Text("Expérience: ${ProgressionManager.experience}/${ProgressionManager.nextLevelExp}"),
           ],

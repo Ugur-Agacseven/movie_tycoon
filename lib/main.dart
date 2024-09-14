@@ -8,6 +8,8 @@ void main() {
 }
 
 class MovieTycoonApp extends StatelessWidget {
+  const MovieTycoonApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
